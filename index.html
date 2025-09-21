@@ -85,6 +85,7 @@
             z-index: 1000;
             padding: 25px 0;
             transition: all 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
         }
         .main-header.scrolled {
             background-color: rgba(255, 255, 255, 0.95);
@@ -95,6 +96,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         .header-logo {
             font-weight: bold;
@@ -112,6 +114,18 @@
             font-weight: 500;
             position: relative;
             padding-bottom: 5px;
+        }
+        @media (max-width: 768px) {
+            .header-logo {
+                font-size: 1.2rem;
+            }
+            .main-nav {
+                margin-top: 10px;
+            }
+            .main-nav a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
         }
         .main-header.scrolled .main-nav a {
             color: var(--color-dark);
@@ -132,7 +146,8 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
+            padding-top: 100px; /* Add padding to prevent overlap with fixed header */
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg') no-repeat center center/cover;
             color: #fff;
             display: flex;
@@ -141,10 +156,19 @@
         }
         .hero-content {
             max-width: 700px;
+            padding: 20px 0;
         }
         .hero h1 {
             font-size: 4.5rem;
             margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
         }
         .hero p {
             font-size: 1.4rem;

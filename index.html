@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sale/Lease: 237 Prospect Plains Rd, Monroe Township, NJ 08831</title>
+    <style>
+        /* Modern CSS Reset */
+        *, *::before, *::after { box-sizing: border-box; }
+        body, h1, h2, h3, p, ul, li { margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* General Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #0078d4;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #005a9e;
+            transform: translateY(-2px);
+        }
+
+        /* Header & Navigation */
+        .main-header {
+            background-color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .main-header .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .main-nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .main-nav a:hover {
+            color: #0078d4;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-image.jpg') no-repeat center center/cover;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        /* Property Highlights Section */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .highlight-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+         .highlight-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #0078d4;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        @media (min-width: 992px) {
+            .about-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .about-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .about-content ul li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .about-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        .about-img img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Gallery Section */
+        .gallery { background-color: #fff; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Potential Uses Section */
+        .uses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .use-card {
+            background: #fff;
+            padding: 25px;
+            border-left: 5px solid #0078d4;
+            border-radius: 5px;
+        }
+        .use-card h3 { margin-bottom: 10px; }
+
+        /* Location Section */
+        .location { background-color: #fff; }
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        @media (min-width: 992px) {
+            .location-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .location-map iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            border-radius: 8px;
+        }
+        .location-details ul {
+            list-style: none;
+            font-size: 1.1rem;
+        }
+        .location-details ul li { margin-bottom: 10px; }
+
+        /* Contact Section */
+        .contact { text-align: center; }
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .contact-info p.agent {
+            font-weight: bold;
+        }
+        .contact-info p.brokerage {
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">237 Prospect Plains Rd</div>
+            <nav class="main-nav">
+                <a href="#overview">Overview</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#location">Location</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>A Unique Commercial Property Opportunity</h1>
+                <p>For Sale or Lease in Monroe Township, NJ. Zoned Neighborhood Commercial with vast potential for owner-users and investors.</p>
+                <a href="#contact" class="btn">Schedule a Tour</a>
+            </div>
+        </section>
+
+        <!-- Property Overview Section -->
+        <section id="overview" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Exceptional, One-of-a-Kind Property</h2>
+                    <p>This move-in ready property offers an amazing opportunity with two free-standing buildings on a ±0.8 acre lot, perfect for office, retail, storage, or service-based businesses.</p>
+                </div>
+                <div class="highlights-grid">
+                    <div class="highlight-item">
+                        <h3>Main Office Building</h3>
+                        <p>±3,500 sq. ft. two-story building with a spacious, fully usable basement featuring tall ceilings and hopper windows. Originally a 5-bedroom dwelling, now configured as offices.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>Second Building/Warehouse</h3>
+                        <p>±2,100 sq. ft. (±30' x ±70') building ideal for storage, garage, or warehouse use. Includes a large attic for additional storage space.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>Ample Parking & Land</h3>
+                        <p>±0.8 acre lot (±152' x ±229') with private, fenced-in overnight parking, dual driveways, and space for vehicles, vans, trucks, or a small fleet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About The Property Section -->
+        <section id="about" class="section" style="background-color: #fff;">
+            <div class="container">
+                 <div class="about-grid">
+                    <div class="about-content">
+                        <h2>Flexible & Versatile Space</h2>
+                        <p>With Neighborhood Commercial (N-C) zoning, this property opens the door to a wide range of potential uses. The main building was originally a dwelling, and with a mixed-use variance approval from the township, it could potentially be used for both residency and business.</p>
+                        <ul>
+                            <li><strong>Dual Buildings:</strong> Separate spaces for office work and storage/operations.</li>
+                            <li><strong>Prime Zoning:</strong> Allows for service, professional, retail, and other commercial uses.</li>
+                            <li><strong>Residential Potential:</strong> Explore a live/work setup with township approval.</li>
+                            <li><strong>Well-Maintained:</strong> The same owner has meticulously cared for the property for 40 years.</li>
+                        </ul>
+                    </div>
+                    <div class="about-img">
+                        <!-- Assumes a primary 'about' image exists in the root folder -->
+                        <img src="gallery1.jpg" alt="Front view of the office building">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Property Gallery</h2>
+                    <p>Visualize the potential of this unique property.</p>
+                </div>
+                <div class="gallery-grid">
+                    <img src="gallery2.jpg" alt="Interior office space">
+                    <img src="gallery3.jpg" alt="Warehouse or storage building exterior">
+                    <img src="gallery4.jpg" alt="Parking area and driveway">
+                    <img src="gallery5.jpg" alt="Basement with tall ceilings">
+                    <img src="gallery6.jpg" alt="View of the property from the road">
+                    <img src="hero-image.jpg" alt="Another view of the property">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Potential Uses Section -->
+        <section id="uses" class="section" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>A Hub for Any Business</h2>
+                    <p>The flexible zoning accommodates a wide variety of commercial and service-oriented enterprises.</p>
+                </div>
+                <div class="uses-grid">
+                    <div class="use-card">
+                        <h3>Service & Contractors</h3>
+                        <p>HVAC, Electrician, Plumber, Roofer, Construction, Landscaping, Pest Control, and more.</p>
+                    </div>
+                    <div class="use-card">
+                        <h3>Professional Offices</h3>
+                        <p>Medical, Real Estate, Financial, Legal, Architects, Accountants, Engineers, Tech, and Consultants.</p>
+                    </div>
+                    <div class="use-card">
+                        <h3>Community & Wellness</h3>
+                        <p>Education, Non-profits, Holistic Medicine, Yoga, Daycare, Religious/House of Worship.</p>
+                    </div>
+                     <div class="use-card">
+                        <h3>Retail & Personal Services</h3>
+                        <p>Neighborhood stores, barber shops, beauty salons, flower shops, or even a restaurant.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Prime, High-Traffic Location</h2>
+                </div>
+                <div class="location-grid">
+                     <div class="location-details">
+                         <h3>Strategic & Accessible</h3>
+                         <p>Situated on a well-trafficked and visible stretch of Prospect Plains Road in Monroe Township.</p>
+                         <ul>
+                            <li>✓ Near NJTPK Exit 8A and Route 130</li>
+                            <li>✓ Across from the entrance to Hovnanian's Four Seasons community</li>
+                            <li>✓ Next to a professional office building</li>
+                        </ul>
+                         <a href="https://www.google.com/maps/place/237+Prospect+Plains+Rd,+Monroe+Township,+NJ+08831" target="_blank" class="btn">Open in Google Maps</a>
+                    </div>
+                    <div class="location-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.69769974288!2d-74.4363211847429!3d40.32635397937573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3cf58a5b2bb73%3A0x8fca5e3df56b276!2s237+Prospect+Plains+Rd%2C+Monroe+Township%2C+NJ+08831!5e0!3m2!1sen!2sus!4v1562688998059!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Interested? Let's Talk.</h2>
+                    <p>Contact the owner/agent today for more information or to schedule a private tour.</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Thomas Kauders</h3>
+                    <p class="agent">Owner & NJ Licensed Real Estate Agent</p>
+                    <p class="brokerage">with Keller Williams, Robbinsville, NJ</p>
+                    <p><strong>Phone:</strong> <a href="tel:908-770-7285">908-770-7285</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:kaudersproperties@gmail.com">kaudersproperties@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 - 237 Prospect Plains Rd, Monroe Township, NJ 08831. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

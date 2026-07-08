@@ -49,6 +49,7 @@ RADIUS_MILES = 50.0
 BOX_FOLDER_URL = "https://app.box.com/v/DCAStandardFiles"
 BOX_DOWNLOAD = "https://app.box.com/index.php?rm=box_download_shared_file&shared_name={shared}&file_id=f_{fid}"
 GAZETTEER_URL = "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_zcta_national.zip"
+ZCTA_COUNTY_URL = "https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt"
 
 PBKDF2_ITERATIONS = 310_000
 
@@ -128,6 +129,30 @@ def load_zip_centroids():
     return centroids
 
 
+def load_zip_counties():
+    """zip5 -> county name, picking the county with the largest land overlap.
+
+    The DCA roster's own county column is unreliable free text (typos, stray
+    addresses), so county is derived from the zip code instead.
+    """
+    path = os.path.join(DATA_DIR, "zcta_county.txt")
+    fetch(ZCTA_COUNTY_URL, path, "Census ZCTA-to-county relationships")
+    best = {}
+    with open(path, encoding="utf-8-sig") as f:
+        header = f.readline().rstrip("\n").split("|")
+        iz, ic, ia = (header.index(c) for c in
+                      ("GEOID_ZCTA5_20", "NAMELSAD_COUNTY_20", "AREALAND_PART"))
+        for line in f:
+            p = line.rstrip("\n").split("|")
+            zip5, county = p[iz], p[ic].replace(" County", "")
+            if not zip5 or not county:
+                continue
+            area = int(p[ia] or 0)
+            if area > best.get(zip5, ("", -1))[1]:
+                best[zip5] = (county, area)
+    return {z: c for z, (c, _) in best.items()}
+
+
 def haversine_miles(lat1, lon1, lat2, lon2):
     r = 3958.8
     p1, p2 = math.radians(lat1), math.radians(lat2)
@@ -157,7 +182,7 @@ def wanted(vals):
     return None
 
 
-def parse_rosters(paths, centroids):
+def parse_rosters(paths, centroids, zip_counties):
     rows, seen = [], set()
     stats = {"total": 0, "matched": 0, "no_zip_centroid": 0, "outside_radius": 0}
     for path in paths.values():
@@ -196,7 +221,7 @@ def parse_rosters(paths, centroids):
                     "city": vals[COL_CITY].strip(),
                     "state": vals[COL_STATE].strip(),
                     "zip": zip5,
-                    "county": vals[COL_COUNTY].strip().title(),
+                    "county": zip_counties.get(zip5, vals[COL_COUNTY].strip().title()),
                     "phone": fmt_phone(phone),
                     "email": vals[COL_EMAIL].strip().lower(),
                     "license": licno,
@@ -256,8 +281,9 @@ def main():
     print("Fetching source data:")
     paths = download_rosters(refresh=args.refresh)
     centroids = load_zip_centroids()
+    zip_counties = load_zip_counties()
 
-    rows, stats = parse_rosters(paths, centroids)
+    rows, stats = parse_rosters(paths, centroids, zip_counties)
     by_trade = {}
     for r in rows:
         by_trade[r["trade"]] = by_trade.get(r["trade"], 0) + 1

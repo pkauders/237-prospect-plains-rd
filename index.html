@@ -4,675 +4,629 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" as="image" href="hero-bg.jpg">
-    <title>An Unparalleled Commercial Opportunity | 237 Prospect Plains Rd, Monroe Twp, NJ</title>
+    <title>For Lease — 237 Prospect Plains Road, Monroe Township, NJ</title>
+    <meta name="description" content="Flexible freestanding commercial space for lease on Prospect Plains Road, Monroe Township, NJ. Excellent visibility, ample parking, immediate occupancy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Reset & Basic Setup */
         :root {
-            --color-dark: #1a1a1a;
-            --color-light: #f8f8f8;
-            --color-gold: #c9a96e;
-            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --font-headings: 'Georgia', serif;
+            --paper: #f5f0e6;
+            --paper-deep: #ece4d3;
+            --ink: #1f2b22;
+            --ink-soft: #46523f;
+            --brass: #a8802f;
+            --brass-bright: #c39a45;
+            --line: rgba(31, 43, 34, 0.18);
+            --serif: 'Fraunces', Georgia, serif;
+            --sans: 'Archivo', 'Helvetica Neue', sans-serif;
         }
-        html {
-            scroll-behavior: smooth;
-        }
+        * , *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             margin: 0;
-            font-family: var(--font-main);
-            background-color: var(--color-light);
-            color: var(--color-dark);
-            line-height: 1.7;
-            overflow-x: hidden;
+            font-family: var(--sans);
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
+        ::selection { background: var(--brass); color: #fff; }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
 
-        /* General Styling */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 30px;
+        .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        .eyebrow {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--brass);
         }
-        .section {
-            padding: 120px 0;
-            position: relative;
+        h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.08; margin: 0; }
+        .sec-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 14px; }
+        .sec-num {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--brass);
+            white-space: nowrap;
         }
-        h1, h2, h3 {
-            font-family: var(--font-headings);
-            font-weight: normal;
-            line-height: 1.2;
-        }
-        h2 {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
-            color: var(--color-dark);
-        }
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: #777;
-            max-width: 700px;
-            margin-bottom: 60px;
-        }
+        .sec-head h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); letter-spacing: -0.01em; }
+        .rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
+
         .btn {
             display: inline-block;
-            padding: 15px 35px;
-            background-color: var(--color-gold);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .btn:hover {
-            background-color: var(--color-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        .text-gold {
-            color: var(--color-gold);
-        }
-
-        /* Header */
-        .main-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 25px 0;
-            transition: all 0.3s ease;
-            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
-        }
-        .main-header.scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .main-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .header-logo {
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: #fff;
             text-decoration: none;
+            padding: 16px 34px;
+            border: 1px solid var(--brass);
+            color: var(--ink);
+            background: transparent;
+            transition: background 0.25s, color 0.25s;
         }
-        .main-header.scrolled .header-logo {
-            color: var(--color-dark);
-        }
-        .main-nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-            position: relative;
-            padding-bottom: 5px;
-        }
-        @media (max-width: 768px) {
-            .header-logo {
-                font-size: 1.2rem;
-            }
-            .main-nav {
-                margin-top: 10px;
-            }
-            .main-nav a {
-                margin: 0 10px;
-                font-size: 0.9rem;
-            }
-        }
-        .main-header.scrolled .main-nav a {
-            color: var(--color-dark);
-        }
-        .main-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--color-gold);
-            transition: width 0.4s ease;
-        }
-        .main-nav a:hover::after {
-            width: 100%;
-        }
+        .btn:hover { background: var(--brass); color: #fff; }
+        .btn.light { color: #fff; border-color: rgba(255,255,255,0.85); }
+        .btn.light:hover { background: #fff; color: var(--ink); }
+        .btn.light.solid { background: var(--brass); border-color: var(--brass); }
+        .btn.light.solid:hover { background: var(--brass-bright); color: #fff; }
 
-        /* Hero Section */
+        /* ---------- top bar ---------- */
+        .topbar {
+            position: fixed; inset: 0 0 auto 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 14px 28px;
+            color: #fff;
+            background: linear-gradient(rgba(18,24,19,0.55), rgba(18,24,19,0));
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        .topbar.scrolled {
+            background: var(--paper);
+            color: var(--ink);
+            box-shadow: 0 1px 0 var(--line);
+        }
+        .brand { font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.02em; text-decoration: none; }
+        .brand em { font-style: italic; color: var(--brass-bright); }
+        .topbar.scrolled .brand em { color: var(--brass); }
+        .topnav { display: flex; gap: 26px; align-items: center; }
+        .topnav a {
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; text-decoration: none; opacity: 0.9;
+        }
+        .topnav a:hover { color: var(--brass-bright); opacity: 1; }
+        .topnav .pill {
+            border: 1px solid currentColor; padding: 7px 16px; border-radius: 999px;
+        }
+        @media (max-width: 820px) { .topnav a:not(.pill) { display: none; } }
+
+        /* ---------- hero ---------- */
         .hero {
-            min-height: 100vh;
-            padding-top: 100px; /* Add padding to prevent overlap with fixed header */
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg') no-repeat center center/cover;
+            position: relative;
+            min-height: 100svh;
+            display: flex; align-items: flex-end;
             color: #fff;
-            display: flex;
-            align-items: center;
-            text-align: left;
+            background:
+                linear-gradient(160deg, rgba(20,27,21,0.72) 0%, rgba(20,27,21,0.35) 45%, rgba(20,27,21,0.78) 100%),
+                url('hero-bg.jpg') center 40% / cover no-repeat;
         }
-        .hero-content {
-            max-width: 700px;
-            padding: 20px 0;
-        }
+        .hero-inner { position: relative; width: 100%; padding: 140px 0 64px; }
+        .hero .eyebrow { color: var(--brass-bright); display: inline-flex; align-items: center; gap: 12px; }
+        .hero .eyebrow::before { content: ""; width: 44px; height: 1px; background: var(--brass-bright); }
         .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 20px;
+            font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+            font-weight: 300;
+            letter-spacing: -0.015em;
+            max-width: 15ch;
+            margin: 18px 0 22px;
         }
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
-            }
+        .hero h1 em { font-style: italic; font-weight: 400; color: var(--brass-bright); }
+        .hero p.lede { max-width: 52ch; font-size: 1.02rem; opacity: 0.92; margin: 0 0 34px; }
+        .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-meta {
+            margin-top: 56px; padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,0.28);
+            display: flex; flex-wrap: wrap; gap: 8px 48px;
+            font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85;
         }
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            line-height: 1.8;
+        .fade-up { opacity: 0; transform: translateY(26px); animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) forwards; }
+        .d1 { animation-delay: 0.1s; } .d2 { animation-delay: 0.25s; }
+        .d3 { animation-delay: 0.4s; } .d4 { animation-delay: 0.55s; } .d5 { animation-delay: 0.75s; }
+        @keyframes rise { to { opacity: 1; transform: none; } }
+
+        /* ---------- stat band ---------- */
+        .stats { background: var(--ink); color: var(--paper); }
+        .stats .wrap {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+        }
+        .stat { padding: 34px 26px; border-left: 1px solid rgba(245,240,230,0.14); }
+        .stat:first-child { border-left: 0; }
+        .stat b { display: block; font-family: var(--serif); font-weight: 400; font-size: 2rem; line-height: 1.1; color: #fff; }
+        .stat b span { font-size: 1.1rem; font-style: italic; color: var(--brass-bright); }
+        .stat small { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.65; }
+        @media (max-width: 820px) {
+            .stats .wrap { grid-template-columns: 1fr 1fr; }
+            .stat:nth-child(3) { border-left: 0; }
+            .stat { border-top: 1px solid rgba(245,240,230,0.14); }
+            .stat:nth-child(-n+2) { border-top: 0; }
         }
 
-        /* Intro Section */
-        #intro .container {
-            text-align: center;
+        /* ---------- sections ---------- */
+        section { padding: 110px 0; }
+        @media (max-width: 820px) { section { padding: 72px 0; } }
+        .hero { padding: 0; }
+
+        /* overview: editorial split */
+        .overview-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 60px; align-items: start; }
+        @media (max-width: 900px) { .overview-grid { grid-template-columns: 1fr; gap: 28px; } }
+        .overview-grid h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        .overview-copy p { font-size: 1.05rem; color: var(--ink-soft); margin: 0 0 1.3em; }
+        .overview-copy p:first-of-type::first-letter {
+            font-family: var(--serif); font-size: 3.4em; line-height: 0.8;
+            float: left; padding: 6px 10px 0 0; color: var(--brass);
+        }
+        .agent-card {
+            margin-top: 34px; padding: 22px 26px;
+            border: 1px solid var(--line); border-left: 3px solid var(--brass);
+            background: var(--paper-deep);
+        }
+        .agent-card .eyebrow { font-size: 0.62rem; }
+        .agent-card b { font-family: var(--serif); font-weight: 500; font-size: 1.25rem; display: block; margin: 6px 0 2px; }
+        .agent-card span { font-size: 0.85rem; color: var(--ink-soft); }
+
+        /* property: alternating photo rows */
+        .prop-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+            align-items: center; margin-top: 72px;
+        }
+        .prop-row:first-of-type { margin-top: 48px; }
+        .prop-row.rev .prop-img { order: 2; }
+        @media (max-width: 900px) {
+            .prop-row { grid-template-columns: 1fr; gap: 26px; margin-top: 56px; }
+            .prop-row.rev .prop-img { order: 0; }
+        }
+        .prop-img { position: relative; cursor: zoom-in; }
+        .prop-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+        .prop-img::after {
+            content: ""; position: absolute; inset: 14px;
+            border: 1px solid rgba(255,255,255,0.55); pointer-events: none;
+        }
+        .prop-copy .eyebrow { display: block; margin-bottom: 10px; }
+        .prop-copy h3 { font-size: clamp(1.6rem, 2.8vw, 2.3rem); margin-bottom: 16px; }
+        .prop-copy p { color: var(--ink-soft); margin: 0 0 18px; }
+        .prop-copy ul { list-style: none; margin: 0; padding: 0; }
+        .prop-copy li {
+            padding: 10px 0 10px 26px; position: relative;
+            border-top: 1px solid var(--line); font-size: 0.95rem;
+        }
+        .prop-copy li::before {
+            content: "—"; position: absolute; left: 0; color: var(--brass);
         }
 
-        /* Details Section (Asymmetrical Layout) */
-        #details { background: #fff; }
-        .details-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
-            gap: 80px;
+        /* ideal uses */
+        .uses { background: var(--paper-deep); }
+        .uses-grid {
+            margin-top: 40px;
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            border-top: 1px solid var(--line); border-left: 1px solid var(--line);
         }
-        @media (min-width: 992px) {
-            .details-grid { grid-template-columns: repeat(2, 1fr); }
-            .details-grid.reverse .image-col { grid-column: 2; }
-            .details-grid.reverse .content-col { grid-column: 1; grid-row: 1; }
+        @media (min-width: 900px) { .uses-grid { grid-template-columns: repeat(5, 1fr); } }
+        .use {
+            border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+            padding: 26px 20px 30px; background: transparent;
+            transition: background 0.25s;
         }
-        .image-col img {
-            border-radius: 8px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            max-width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-            cursor: pointer;
-            transition: transform 0.3s ease, filter 0.3s ease;
+        .use:hover { background: var(--paper); }
+        .use i {
+            font-family: var(--serif); font-style: italic; font-size: 0.85rem;
+            color: var(--brass); display: block; margin-bottom: 12px;
         }
-        .image-col img:hover {
-            transform: scale(1.02);
-            filter: brightness(1.1);
+        .use b { font-weight: 600; font-size: 0.92rem; line-height: 1.35; display: block; }
+        .uses-note { margin-top: 18px; font-size: 0.8rem; color: var(--ink-soft); }
+
+        /* gallery */
+        .gal-grid {
+            margin-top: 44px;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
         }
-        .content-col h3 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        @media (max-width: 900px) { .gal-grid { grid-template-columns: repeat(2, 1fr); } }
+        .gal-grid figure { margin: 0; overflow: hidden; cursor: zoom-in; }
+        .gal-grid img {
+            width: 100%; aspect-ratio: 4/3; object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.2,0.7,0.2,1);
         }
-        .content-col ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
+        .gal-grid figure:hover img { transform: scale(1.05); }
+
+        /* location / transportation */
+        .loc { background: var(--ink); color: var(--paper); }
+        .loc .sec-head h2 { color: #fff; }
+        .loc .lede { max-width: 62ch; color: rgba(245,240,230,0.78); margin: 0 0 8px; }
+        .loc-highways {
+            display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0 50px;
         }
-        .content-col ul li {
-            padding-left: 35px;
-            position: relative;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+        .hwy {
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+            border: 1px solid rgba(245,240,230,0.35); border-radius: 999px;
+            padding: 8px 18px; color: rgba(245,240,230,0.9);
         }
-        .content-col ul li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--color-gold);
-            font-size: 1.5rem;
-            line-height: 1;
+        .tt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 64px; }
+        @media (max-width: 900px) { .tt-grid { grid-template-columns: 1fr; } }
+        .tt h3 {
+            font-size: 1.35rem; font-weight: 400; color: #fff;
+            display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;
+        }
+        .tt h3 i { font-style: italic; font-size: 0.85rem; color: var(--brass-bright); }
+        .tt table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .tt td { padding: 11px 0; border-top: 1px solid rgba(245,240,230,0.16); vertical-align: top; }
+        .tt td:last-child {
+            text-align: right; white-space: nowrap; padding-left: 18px;
+            font-family: var(--serif); font-style: italic; color: var(--brass-bright);
+        }
+        .tt td small { display: block; opacity: 0.55; font-size: 0.78rem; }
+
+        /* lease highlights */
+        .lease-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 44px; border-left: 1px solid var(--line); }
+        @media (max-width: 900px) { .lease-grid { grid-template-columns: 1fr 1fr; row-gap: 34px; } }
+        @media (max-width: 560px) { .lease-grid { grid-template-columns: 1fr; } }
+        .lease {
+            border-right: 1px solid var(--line); padding: 6px 26px 0;
+        }
+        .lease i { font-family: var(--serif); font-style: italic; color: var(--brass); font-size: 0.9rem; }
+        .lease h3 { font-size: 1.3rem; margin: 10px 0 8px; }
+        .lease p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+        /* contact */
+        .contact {
+            background:
+                linear-gradient(rgba(20,27,21,0.84), rgba(20,27,21,0.84)),
+                url('thumbs/gallery2.jpg') center / cover no-repeat;
+            color: #fff; text-align: center;
+        }
+        .contact h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; }
+        .contact h2 em { font-style: italic; color: var(--brass-bright); }
+        .contact .who { margin: 30px 0 6px; font-family: var(--serif); font-size: 1.5rem; }
+        .contact .role { font-size: 0.75rem; letter-spacing: 0.24em; text-transform: uppercase; opacity: 0.75; }
+        .contact-lines { margin: 26px 0 38px; font-size: 1.05rem; line-height: 2; }
+        .contact-lines a { text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); }
+        .contact-lines a:hover { border-color: var(--brass-bright); color: var(--brass-bright); }
+
+        footer.site {
+            padding: 26px 24px; font-size: 0.75rem; color: var(--ink-soft);
+        }
+        footer.site .wrap {
+            display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: space-between; padding: 0;
         }
 
-        /* Gallery Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px 0;
-        }
-        .gallery-grid .image-wrapper {
-            position: relative;
-            padding-bottom: 75%; /* 4:3 aspect ratio */
-            width: 100%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .gallery-grid img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease, filter 0.3s ease;
-            display: block;
-        }
-        .gallery-grid img:hover {
-            transform: scale(1.03);
-            filter: brightness(1.1);
-            cursor: pointer;
-        }
+        /* reveal on scroll */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2,0.7,0.2,1); }
+        .reveal.in { opacity: 1; transform: none; }
 
-        /* Potential Uses Section */
-        #potential { background: var(--color-dark); color: #fff; }
-        #potential h2, #potential .section-subtitle { color: #fff; }
-        .potential-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .potential-card {
-            background: rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 8px;
-            border-top: 3px solid var(--color-gold);
-        }
-        .potential-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--color-gold); }
-
-        /* Location Section */
-        #location { background: #fff; }
-        .location-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 50px;
-        }
-        @media (min-width: 992px) { .location-grid { grid-template-columns: repeat(2, 1fr); } }
-        .location-map iframe {
-            width: 100%; height: 500px; border: 0; border-radius: 8px;
-        }
-        .location-content h3 { font-size: 2rem; margin-bottom: 15px; }
-
-        /* CTA Section */
-        #cta {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero-bg.jpg') no-repeat center center/cover;
-            background-attachment: fixed;
-            text-align: center;
-            color: #fff;
-        }
-        #cta h2 { color: #fff; font-size: 3rem; }
-        #cta .btn { margin-top: 20px; }
-        
-        /* Footer */
-        .main-footer {
-            background-color: var(--color-dark);
-            color: #aaa;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .footer-content h3 {
-            color: #fff;
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .footer-content p { margin-bottom: 10px; font-size: 1.1rem; }
-        .footer-content a { color: var(--color-gold); text-decoration: none; }
-        .footer-bottom {
-            margin-top: 50px;
-            border-top: 1px solid #444;
-            padding-top: 30px;
-            font-size: 0.9rem;
-        }
-        
-        /* Lightbox Gallery */
+        /* lightbox */
         .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            display: none; position: fixed; inset: 0; z-index: 2000;
+            background: rgba(18,22,18,0.94);
         }
-        .lightbox.active {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .lightbox.active { display: flex; justify-content: center; align-items: center; }
+        .lightbox img { max-width: 92%; max-height: 90vh; margin: auto; }
+        .lb-btn {
+            position: absolute; color: #fff; font-size: 2rem; line-height: 1;
+            background: none; border: 0; cursor: pointer; padding: 14px;
+            opacity: 0.8; font-family: var(--sans);
         }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            margin: auto;
-            display: block;
-        }
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(0,0,0,0.5);
-            padding: 1rem;
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-        .lightbox-nav:hover {
-            background: rgba(0,0,0,0.8);
-        }
-        .lightbox-prev {
-            left: 20px;
-        }
-        .lightbox-next {
-            right: 20px;
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(0,0,0,0.5);
-            padding: 0.5rem 1rem;
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-        .lightbox-close:hover {
-            background: rgba(0,0,0,0.8);
-        }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .lb-btn:hover { opacity: 1; color: var(--brass-bright); }
+        .lb-prev { left: 14px; top: 50%; transform: translateY(-50%); }
+        .lb-next { right: 14px; top: 50%; transform: translateY(-50%); }
+        .lb-close { top: 14px; right: 14px; }
     </style>
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <a href="#" class="header-logo">237 Prospect Plains Road</a>
-            <nav class="main-nav">
-                <a href="#intro">The Vision</a>
-                <a href="#details">The Property</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#location">Location</a>
-            </nav>
-        </div>
+    <header class="topbar" id="topbar">
+        <a class="brand" href="#top">237 <em>Prospect Plains</em> Road</a>
+        <nav class="topnav">
+            <a href="#property">The Property</a>
+            <a href="#uses">Ideal Uses</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#location">Location</a>
+            <a class="pill" href="#contact">Schedule a Tour</a>
+        </nav>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Where Opportunity Meets Potential.</h1>
-                    <p>An exceptional commercial estate in Monroe Township, offering unparalleled versatility for visionary owners and entrepreneurs. This is not just a property; it's a foundation for your future.</p>
-                    <a href="#cta" class="btn">Inquire Now</a>
-                </div>
+    <!-- Hero -->
+    <section class="hero" id="top">
+        <div class="wrap hero-inner">
+            <span class="eyebrow fade-up d1">For Lease · Monroe Township, New Jersey</span>
+            <h1 class="fade-up d2">Flexible commercial space on a <em>corridor that works</em> as hard as you do.</h1>
+            <p class="lede fade-up d3">A highly visible, freestanding commercial property on one of Monroe Township's most traveled roads — flexible space, excellent frontage, and ample parking, ready for your business.</p>
+            <div class="hero-ctas fade-up d4">
+                <a class="btn light solid" href="#contact">Schedule a Private Tour</a>
+                <a class="btn light" href="#property">Explore the Property</a>
             </div>
-        </section>
-
-        <!-- Intro Section -->
-        <section id="intro" class="section">
-            <div class="container fade-in">
-                <h2>A Canvas for Ambition</h2>
-                <p class="section-subtitle">Meticulously maintained by a single owner for 40 years, this unique property blends commercial utility with future-proof flexibility. Zoned for Neighborhood Commercial use, it presents a rare opening for service-based businesses, professional firms, and innovative retail concepts in a strategic, high-visibility location.</p>
-            </div>
-        </section>
-
-        <!-- Details Section -->
-        <section id="details" class="section">
-            <div class="container">
-                <div class="details-grid fade-in">
-                    <div class="content-col">
-                        <h3>The Main Office Building</h3>
-                        <p>A stately ±3,500 sq. ft. two-story structure, formerly a residence, now a professional office space. Its heritage lends a unique character, while its conversion offers modern utility. Features a fully usable, high-ceilinged basement, offering expansive potential for operations or storage.</p>
-                        <ul>
-                            <li>Five spacious offices (formerly bedrooms)</li>
-                            <li>Two full bathrooms</li>
-                            <li>Expansive basement with hopper windows</li>
-                        </ul>
-                    </div>
-                    <div class="image-col">
-                        <img src="thumbs/main-building.jpg" data-full="main-building.jpg" alt="Elegant main office building" loading="lazy" decoding="async">
-                    </div>
-                </div>
-                <div class="details-grid reverse fade-in" style="margin-top: 100px;">
-                     <div class="content-col">
-                        <h3>The Auxiliary Warehouse</h3>
-                        <p>A ±2,100 sq. ft. freestanding building provides the essential backbone for any service or product-based enterprise. An ideal space for storage, a garage, a workshop, or a small-scale assembly hub. Includes a large attic for further storage possibilities.</p>
-                         <ul>
-                             <li>Flexible open-plan layout (±30' x ±70')</li>
-                             <li>Large attic storage space</li>
-                             <li>Ready for immediate use or custom improvements</li>
-                         </ul>
-                    </div>
-                    <div class="image-col">
-                        <img src="thumbs/warehouse.jpg" data-full="warehouse.jpg" alt="Versatile warehouse and storage facility" loading="lazy" decoding="async">
-                    </div>
-                </div>
-                 <div class="details-grid fade-in" style="margin-top: 100px;">
-                    <div class="content-col">
-                        <h3>The Grounds & Parking</h3>
-                        <p>Set on a ±0.8-acre lot, the property boasts extensive private, fenced-in parking. Dual driveways provide seamless access for everything from client vehicles to a small fleet of trucks and vans, ensuring logistical ease and security.</p>
-                        <ul>
-                            <li>Generous ±152' x ±229' lot size</li>
-                            <li>Secure, fenced-in overnight parking</li>
-                            <li>Dual driveways for easy ingress/egress</li>
-                        </ul>
-                    </div>
-                    <div class="image-col">
-                        <img src="thumbs/parking-lot.jpg" data-full="parking-lot.jpg" alt="Spacious and secure private parking" loading="lazy" decoding="async">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section id="gallery" class="section">
-            <div class="container fade-in">
-                <div style="text-align: center;">
-                    <h2>Visualizing the Potential</h2>
-                    <p class="section-subtitle">Explore the spaces that await your vision.</p>
-                </div>
-                <div class="gallery-grid">
-                    <div class="image-wrapper"><img src="thumbs/gallery1.jpg" data-full="gallery1.jpg" alt="Gallery Image 1" loading="lazy" decoding="async"></div>
-                    <div class="image-wrapper"><img src="thumbs/gallery2.jpg" data-full="gallery2.jpg" alt="Gallery Image 2" loading="lazy" decoding="async"></div>
-                    <div class="image-wrapper"><img src="thumbs/gallery3.jpg" data-full="gallery3.jpg" alt="Gallery Image 3" loading="lazy" decoding="async"></div>
-                    <div class="image-wrapper"><img src="thumbs/gallery4.jpg" data-full="gallery4.jpg" alt="Gallery Image 4" loading="lazy" decoding="async"></div>
-                    <div class="image-wrapper"><img src="thumbs/gallery5.jpg" data-full="gallery5.jpg" alt="Gallery Image 5" loading="lazy" decoding="async"></div>
-                    <div class="image-wrapper"><img src="thumbs/gallery6.jpg" data-full="gallery6.jpg" alt="Gallery Image 6" loading="lazy" decoding="async"></div>
-                    <div class="image-wrapper"><img src="thumbs/gallery7.jpg" data-full="gallery7.jpg" alt="Gallery Image 7" loading="lazy" decoding="async"></div>
-                    <div class="image-wrapper"><img src="thumbs/gallery8.jpg" data-full="gallery8.jpg" alt="Gallery Image 8" loading="lazy" decoding="async"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Potential Uses Section -->
-        <section id="potential" class="section">
-            <div class="container fade-in">
-                 <div style="text-align: center;">
-                    <h2>Limitless Applications</h2>
-                    <p class="section-subtitle">The property’s Neighborhood Commercial zoning invites a diverse portfolio of business ventures.</p>
-                </div>
-                <div class="potential-grid">
-                    <div class="potential-card">
-                        <h3>Professional Headquarters</h3>
-                        <p>Ideal for firms in finance, law, architecture, real estate, or technology seeking a distinguished address.</p>
-                    </div>
-                    <div class="potential-card">
-                        <h3>Artisanal & Trade Hub</h3>
-                        <p>A perfect base for contractors—from HVAC to landscaping—requiring office space, vehicle parking, and material storage.</p>
-                    </div>
-                    <div class="potential-card">
-                        <h3>Wellness & Community Center</h3>
-                        <p>Envision a holistic practice, a daycare, a non-profit organization, or a serene house of worship.</p>
-                    </div>
-                     <div class="potential-card">
-                        <h3>Boutique Retail & Services</h3>
-                        <p>Establish a neighborhood destination, such as a specialty store, a high-end salon, or a unique restaurant concept.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Location Section -->
-        <section id="location" class="section">
-            <div class="container fade-in">
-                 <div style="text-align: center;">
-                    <h2>A Strategic Location</h2>
-                     <p class="section-subtitle">Positioned for visibility and convenience in the heart of a thriving community.</p>
-                </div>
-                <div class="location-grid">
-                    <div class="location-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.69769974288!2d-74.4363211847429!3d40.32635397937573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3cf58a5b2bb73%3A0x8fca5e3df56b276!2s237+Prospect+Plains+Rd%2C+Monroe+Township%2C+NJ+08831!5e0!3m2!1sen!2sus!4v1562688998059!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                    <div class="location-content">
-                        <h3>Connectivity & Community</h3>
-                        <p>Located on a dynamic stretch of Prospect Plains Road, the property benefits from high traffic and easy access to major transportation routes.</p>
-                        <ul>
-                            <li style="padding-left:0; margin-bottom: 20px;"><strong>Proximity:</strong> Near NJTPK Exit 8A and Route 130.</li>
-                            <li style="padding-left:0; margin-bottom: 20px;"><strong>Visibility:</strong> Across from the entrance to Hovnanian's Four Seasons community.</li>
-                            <li style="padding-left:0;"><strong>Prestige:</strong> Situated next to a professional office building, enhancing the commercial appeal.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Call to Action Section -->
-        <section id="cta" class="section">
-            <div class="container fade-in">
-                <h2>Begin Your Next Chapter Here.</h2>
-                <p class="section-subtitle" style="color: #eee; margin-left: auto; margin-right: auto;">This is a rare opportunity to acquire a landmark property with boundless potential. <br>Schedule a private viewing to experience it firsthand.</p>
-                <a href="#footer-contact" class="btn">Schedule a Viewing</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Lightbox -->
-    <div class="lightbox">
-        <div class="lightbox-close">&times;</div>
-        <div class="lightbox-prev">&larr;</div>
-        <div class="lightbox-next">&rarr;</div>
-        <img src="" alt="Gallery image">
-    </div>
-
-    <footer id="footer-contact" class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <h3>Thomas Kauders</h3>
-                <p>Owner & NJ Licensed Real Estate Agent</p>
-                <p>with Keller Williams, Robbinsville, NJ</p>
-                <p><strong>Phone:</strong> <a href="tel:908-770-7285">908-770-7285</a></p>
-                <p><strong>Email:</strong> <a href="mailto:kaudersproperties@gmail.com">kaudersproperties@gmail.com</a></p>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 - 237 Prospect Plains Rd, Monroe Township, NJ 08831. All Rights Reserved.</p>
+            <div class="hero-meta fade-up d5">
+                <span>237 Prospect Plains Road, Monroe Twp, NJ 08831</span>
+                <span>Immediate Occupancy</span>
+                <span>Flexible Lease Terms</span>
             </div>
         </div>
+    </section>
+
+    <!-- Stat band -->
+    <div class="stats">
+        <div class="wrap">
+            <div class="stat"><b>±3,500 <span>SF</span></b><small>Main Building</small></div>
+            <div class="stat"><b>±2,100 <span>SF</span></b><small>Auxiliary Warehouse</small></div>
+            <div class="stat"><b>±0.8 <span>Acres</span></b><small>Fenced Lot, Dual Driveways</small></div>
+            <div class="stat"><b>Now</b><small>Available for Occupancy</small></div>
+        </div>
+    </div>
+
+    <!-- Overview -->
+    <section id="overview">
+        <div class="wrap overview-grid reveal">
+            <div>
+                <span class="eyebrow">№ 01 — The Opportunity</span>
+                <h2 style="margin-top:12px;">A professional presence in one of Middlesex County's growing commercial markets.</h2>
+            </div>
+            <div class="overview-copy">
+                <p>Position your business in a highly visible freestanding commercial building along one of Monroe Township's most traveled corridors. This well-maintained property offers flexible commercial space ideal for professional offices, medical or wellness practices, retail, personal services, educational uses, and other approved commercial businesses.</p>
+                <p>With excellent road frontage, convenient access to major highways, and ample on-site parking, 237 Prospect Plains Road provides an outstanding opportunity for businesses seeking a professional address — surrounded by established residential neighborhoods and growing commercial development, with convenient reach throughout Middlesex, Mercer, and Monmouth Counties.</p>
+                <div class="agent-card">
+                    <span class="eyebrow">Exclusive Leasing Representation</span>
+                    <b>Thomas Kauders</b>
+                    <span>Commercial Real Estate Advisor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- The Property -->
+    <section id="property">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="sec-num">№ 02</span>
+                <h2>The Property</h2>
+            </div>
+            <p class="reveal" style="max-width:60ch;color:var(--ink-soft);margin:0;">Two buildings on a generous fenced lot — a move-in-ready flexible floor plan with prominent signage opportunities on Prospect Plains Road.</p>
+
+            <div class="prop-row reveal">
+                <div class="prop-img" data-lb>
+                    <img src="thumbs/main-building.jpg" data-full="main-building.jpg" alt="Main commercial building at 237 Prospect Plains Road" loading="lazy" decoding="async">
+                </div>
+                <div class="prop-copy">
+                    <span class="eyebrow">The Main Building</span>
+                    <h3>Character up front, utility throughout.</h3>
+                    <p>A stately ±3,500 sq. ft. two-story structure converted to professional space. Its heritage lends distinctive character; its conversion delivers modern flexibility — with a fully usable, high-ceilinged basement below.</p>
+                    <ul>
+                        <li>Five spacious private offices</li>
+                        <li>Two full bathrooms</li>
+                        <li>Expansive basement with hopper windows</li>
+                        <li>Move-in ready, flexible floor plan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prop-row rev reveal">
+                <div class="prop-img" data-lb>
+                    <img src="thumbs/warehouse.jpg" data-full="warehouse.jpg" alt="Auxiliary warehouse building" loading="lazy" decoding="async">
+                </div>
+                <div class="prop-copy">
+                    <span class="eyebrow">The Auxiliary Warehouse</span>
+                    <h3>The backbone for a working business.</h3>
+                    <p>A ±2,100 sq. ft. freestanding building — ideal for storage, a garage, workshop, showroom back-of-house, or small-scale assembly, with a large attic for further capacity.</p>
+                    <ul>
+                        <li>Open-plan layout, ±30' × ±70'</li>
+                        <li>Large attic storage</li>
+                        <li>Ready for immediate use or custom fit-out</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prop-row reveal">
+                <div class="prop-img" data-lb>
+                    <img src="thumbs/parking-lot.jpg" data-full="parking-lot.jpg" alt="Private fenced parking with dual driveways" loading="lazy" decoding="async">
+                </div>
+                <div class="prop-copy">
+                    <span class="eyebrow">The Grounds &amp; Parking</span>
+                    <h3>Parking your clients will notice.</h3>
+                    <p>A ±0.8-acre lot with extensive private, fenced-in parking. Dual driveways handle everything from client vehicles to a small fleet with logistical ease and security.</p>
+                    <ul>
+                        <li>Generous ±152' × ±229' lot</li>
+                        <li>Secure, fenced-in overnight parking</li>
+                        <li>Dual driveways for easy ingress/egress</li>
+                        <li>Prominent signage opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ideal Uses -->
+    <section class="uses" id="uses">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="sec-num">№ 03</span>
+                <h2>Ideal Uses</h2>
+            </div>
+            <p class="reveal" style="max-width:60ch;color:var(--ink-soft);margin:0;">Flexible commercial zoning invites a diverse range of businesses.</p>
+            <div class="uses-grid reveal">
+                <div class="use"><i>i.</i><b>Medical or Dental Office</b></div>
+                <div class="use"><i>ii.</i><b>Professional Office</b></div>
+                <div class="use"><i>iii.</i><b>Physical Therapy or Chiropractic</b></div>
+                <div class="use"><i>iv.</i><b>Wellness or Counseling Center</b></div>
+                <div class="use"><i>v.</i><b>Retail Showroom</b></div>
+                <div class="use"><i>vi.</i><b>Insurance or Financial Services</b></div>
+                <div class="use"><i>vii.</i><b>Educational or Tutoring Center</b></div>
+                <div class="use"><i>viii.</i><b>Salon, Spa, or Personal Services</b></div>
+                <div class="use"><i>ix.</i><b>Technology or Creative Office</b></div>
+                <div class="use"><i>x.</i><b>Trade &amp; Contractor Headquarters</b></div>
+            </div>
+            <p class="uses-note reveal">Specialty commercial uses considered, subject to township approvals.</p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="sec-num">№ 04</span>
+                <h2>Gallery</h2>
+            </div>
+            <div class="gal-grid reveal">
+                <figure data-lb><img src="thumbs/gallery1.jpg" data-full="gallery1.jpg" alt="Property view 1" loading="lazy" decoding="async"></figure>
+                <figure data-lb><img src="thumbs/gallery2.jpg" data-full="gallery2.jpg" alt="Property view 2" loading="lazy" decoding="async"></figure>
+                <figure data-lb><img src="thumbs/gallery3.jpg" data-full="gallery3.jpg" alt="Property view 3" loading="lazy" decoding="async"></figure>
+                <figure data-lb><img src="thumbs/gallery4.jpg" data-full="gallery4.jpg" alt="Property view 4" loading="lazy" decoding="async"></figure>
+                <figure data-lb><img src="thumbs/gallery5.jpg" data-full="gallery5.jpg" alt="Property view 5" loading="lazy" decoding="async"></figure>
+                <figure data-lb><img src="thumbs/gallery6.jpg" data-full="gallery6.jpg" alt="Property view 6" loading="lazy" decoding="async"></figure>
+                <figure data-lb><img src="thumbs/gallery7.jpg" data-full="gallery7.jpg" alt="Property view 7" loading="lazy" decoding="async"></figure>
+                <figure data-lb><img src="thumbs/gallery8.jpg" data-full="gallery8.jpg" alt="Property view 8" loading="lazy" decoding="async"></figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Transportation -->
+    <section class="loc" id="location">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="sec-num">№ 05</span>
+                <h2>Location &amp; Accessibility</h2>
+            </div>
+            <p class="lede reveal">Set in the Prospect Plains section of Monroe Township with convenient access to regional transit, major highways, and the employment and distribution hubs of Central New Jersey — well connected for businesses serving both local and regional markets.</p>
+            <div class="loc-highways reveal">
+                <span class="hwy">NJ Turnpike / I-95</span>
+                <span class="hwy">Route 130</span>
+                <span class="hwy">Route 33</span>
+                <span class="hwy">Exit 8A</span>
+            </div>
+            <div class="tt-grid">
+                <div class="tt reveal">
+                    <h3><i>Bus</i> Park &amp; Ride</h3>
+                    <table>
+                        <tr><td>Monroe Park &amp; Ride<small>8-minute walk</small></td><td>0.7 mi</td></tr>
+                        <tr><td>Applegarth Rd &amp; Clearbrook Plaza<small>19-minute walk</small></td><td>1.2 mi</td></tr>
+                        <tr><td>Forsgate Dr &amp; Rossmoor Dr<small>5-minute drive</small></td><td>2.0 mi</td></tr>
+                        <tr><td>8A Park &amp; Ride — South Brunswick<small>8-minute drive</small></td><td>3.5 mi</td></tr>
+                        <tr><td>Monroe Town — Stonebridge<small>11-minute drive</small></td><td>3.7 mi</td></tr>
+                    </table>
+                </div>
+                <div class="tt reveal">
+                    <h3><i>Rail</i> NJ Transit</h3>
+                    <table>
+                        <tr><td>Princeton Station<small>21-minute drive</small></td><td>11.5 mi</td></tr>
+                        <tr><td>Princeton Junction Station<small>21-minute drive</small></td><td>11.6 mi</td></tr>
+                        <tr><td>Jersey Avenue Station<small>29-minute drive</small></td><td>14.1 mi</td></tr>
+                        <tr><td>Hamilton Station<small>29-minute drive</small></td><td>15.0 mi</td></tr>
+                        <tr><td>New Brunswick Station<small>27-minute drive</small></td><td>16.4 mi</td></tr>
+                    </table>
+                </div>
+                <div class="tt reveal">
+                    <h3><i>Air</i> Airports</h3>
+                    <table>
+                        <tr><td>Trenton–Mercer Airport (TTN)<small>37-minute drive</small></td><td>23.0 mi</td></tr>
+                        <tr><td>Newark Liberty International (EWR)<small>52-minute drive</small></td><td>37.6 mi</td></tr>
+                    </table>
+                </div>
+                <div class="tt reveal">
+                    <h3><i>Freight</i> Logistics &amp; Distribution</h3>
+                    <table>
+                        <tr><td>National Distribution Centers<small>12-minute drive</small></td><td>5.4 mi</td></tr>
+                        <tr><td>New York Container Terminal<small>44-minute drive</small></td><td>32.7 mi</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lease Highlights -->
+    <section id="lease">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="sec-num">№ 06</span>
+                <h2>Lease Highlights</h2>
+            </div>
+            <div class="lease-grid reveal">
+                <div class="lease"><i>i.</i><h3>Flexible Terms</h3><p>Lease structures tailored to your business plan.</p></div>
+                <div class="lease"><i>ii.</i><h3>Immediate Occupancy</h3><p>Move-in ready — open your doors without delay.</p></div>
+                <div class="lease"><i>iii.</i><h3>Tenant Improvements</h3><p>Fit-out opportunities may be available for qualified tenants.</p></div>
+                <div class="lease"><i>iv.</i><h3>Competitive Rates</h3><p>Professional presence without the premium-market price.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="wrap reveal">
+            <span class="eyebrow">Schedule Your Private Tour</span>
+            <h2 style="margin-top:14px;">See it in person. <em>Picture your business here.</em></h2>
+            <div class="who">Thomas Kauders</div>
+            <div class="role">Commercial Real Estate Advisor · Exclusive Leasing Representation</div>
+            <div class="contact-lines">
+                <a href="tel:908-770-7285">908-770-7285</a><br>
+                <a href="mailto:kaudersproperties@gmail.com">kaudersproperties@gmail.com</a>
+            </div>
+            <a class="btn light solid" href="mailto:kaudersproperties@gmail.com?subject=Tour%20Request%20%E2%80%94%20237%20Prospect%20Plains%20Rd">Request a Showing</a>
+        </div>
+    </section>
+
+    <footer class="site">
+        <div class="wrap">
+            <span>237 Prospect Plains Road, Monroe Township, NJ 08831</span>
+            <span>Offered for lease · Exclusive representation: Thomas Kauders</span>
+        </div>
     </footer>
-    
+
+    <!-- Lightbox -->
+    <div class="lightbox" aria-hidden="true">
+        <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+        <button class="lb-btn lb-prev" aria-label="Previous">&#8249;</button>
+        <img src="" alt="Property photo">
+        <button class="lb-btn lb-next" aria-label="Next">&#8250;</button>
+    </div>
+
     <script>
-        // Simple script for header scroll effect
-        const header = document.querySelector('.main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        // Sticky header state
+        const topbar = document.getElementById('topbar');
+        addEventListener('scroll', () => topbar.classList.toggle('scrolled', scrollY > 40), { passive: true });
 
-        // Simple script for fade-in animations on scroll
-        const faders = document.querySelectorAll('.fade-in');
-        const appearOptions = {
-            threshold: 0.2,
-            rootMargin: "0px 0px -50px 0px"
-        };
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('visible');
-                    appearOnScroll.unobserve(entry.target);
-                }
-            });
-        }, appearOptions);
+        // Scroll reveals
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-
-        // Lightbox Gallery functionality
+        // Lightbox
         const lightbox = document.querySelector('.lightbox');
         const lightboxImg = lightbox.querySelector('img');
-        const lightboxClose = lightbox.querySelector('.lightbox-close');
-        const lightboxPrev = lightbox.querySelector('.lightbox-prev');
-        const lightboxNext = lightbox.querySelector('.lightbox-next');
-        const galleryImages = document.querySelectorAll('.gallery-grid img, .image-col img');
-        let currentImageIndex = 0;
-
-        function openLightbox(image, index) {
-            lightboxImg.src = image.dataset.full || image.src;
-            lightboxImg.alt = image.alt;
-            currentImageIndex = index;
+        const shots = [...document.querySelectorAll('[data-lb] img')];
+        let idx = 0;
+        function show(i) {
+            idx = (i + shots.length) % shots.length;
+            lightboxImg.src = shots[idx].dataset.full || shots[idx].src;
+            lightboxImg.alt = shots[idx].alt;
+        }
+        shots.forEach((img, i) => img.closest('[data-lb]').addEventListener('click', () => {
+            show(i);
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function showNextImage() {
-            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-            lightboxImg.src = galleryImages[currentImageIndex].dataset.full || galleryImages[currentImageIndex].src;
-            lightboxImg.alt = galleryImages[currentImageIndex].alt;
-        }
-
-        function showPrevImage() {
-            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-            lightboxImg.src = galleryImages[currentImageIndex].dataset.full || galleryImages[currentImageIndex].src;
-            lightboxImg.alt = galleryImages[currentImageIndex].alt;
-        }
-
-        // Event listeners for lightbox
-        galleryImages.forEach((img, index) => {
-            img.addEventListener('click', () => openLightbox(img, index));
-        });
-
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightboxNext.addEventListener('click', showNextImage);
-        lightboxPrev.addEventListener('click', showPrevImage);
-
-        // Close lightbox with Escape key
-        document.addEventListener('keydown', (e) => {
+        }));
+        function closeLb() { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+        lightbox.querySelector('.lb-close').addEventListener('click', closeLb);
+        lightbox.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
+        lightbox.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
+        lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target === lightboxImg) closeLb(); });
+        addEventListener('keydown', e => {
             if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowRight') showNextImage();
-            if (e.key === 'ArrowLeft') showPrevImage();
-        });
-
-        // Close lightbox when clicking outside the image
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
+            if (e.key === 'Escape') closeLb();
+            if (e.key === 'ArrowRight') show(idx + 1);
+            if (e.key === 'ArrowLeft') show(idx - 1);
         });
     </script>
-
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" as="image" href="hero-bg.jpg">
     <title>An Unparalleled Commercial Opportunity | 237 Prospect Plains Rd, Monroe Twp, NJ</title>
     <style>
         /* CSS Reset & Basic Setup */
@@ -445,7 +446,7 @@
                         </ul>
                     </div>
                     <div class="image-col">
-                        <img src="main-building.jpg" alt="Elegant main office building">
+                        <img src="thumbs/main-building.jpg" data-full="main-building.jpg" alt="Elegant main office building" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="details-grid reverse fade-in" style="margin-top: 100px;">
@@ -459,7 +460,7 @@
                          </ul>
                     </div>
                     <div class="image-col">
-                        <img src="warehouse.jpg" alt="Versatile warehouse and storage facility">
+                        <img src="thumbs/warehouse.jpg" data-full="warehouse.jpg" alt="Versatile warehouse and storage facility" loading="lazy" decoding="async">
                     </div>
                 </div>
                  <div class="details-grid fade-in" style="margin-top: 100px;">
@@ -473,7 +474,7 @@
                         </ul>
                     </div>
                     <div class="image-col">
-                        <img src="parking-lot.jpg" alt="Spacious and secure private parking">
+                        <img src="thumbs/parking-lot.jpg" data-full="parking-lot.jpg" alt="Spacious and secure private parking" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -487,14 +488,14 @@
                     <p class="section-subtitle">Explore the spaces that await your vision.</p>
                 </div>
                 <div class="gallery-grid">
-                    <div class="image-wrapper"><img src="gallery1.jpg" alt="Gallery Image 1"></div>
-                    <div class="image-wrapper"><img src="gallery2.jpg" alt="Gallery Image 2"></div>
-                    <div class="image-wrapper"><img src="gallery3.jpg" alt="Gallery Image 3"></div>
-                    <div class="image-wrapper"><img src="gallery4.jpg" alt="Gallery Image 4"></div>
-                    <div class="image-wrapper"><img src="gallery5.jpg" alt="Gallery Image 5"></div>
-                    <div class="image-wrapper"><img src="gallery6.jpg" alt="Gallery Image 6"></div>
-                    <div class="image-wrapper"><img src="gallery7.jpg" alt="Gallery Image 7"></div>
-                    <div class="image-wrapper"><img src="gallery8.jpg" alt="Gallery Image 8"></div>
+                    <div class="image-wrapper"><img src="thumbs/gallery1.jpg" data-full="gallery1.jpg" alt="Gallery Image 1" loading="lazy" decoding="async"></div>
+                    <div class="image-wrapper"><img src="thumbs/gallery2.jpg" data-full="gallery2.jpg" alt="Gallery Image 2" loading="lazy" decoding="async"></div>
+                    <div class="image-wrapper"><img src="thumbs/gallery3.jpg" data-full="gallery3.jpg" alt="Gallery Image 3" loading="lazy" decoding="async"></div>
+                    <div class="image-wrapper"><img src="thumbs/gallery4.jpg" data-full="gallery4.jpg" alt="Gallery Image 4" loading="lazy" decoding="async"></div>
+                    <div class="image-wrapper"><img src="thumbs/gallery5.jpg" data-full="gallery5.jpg" alt="Gallery Image 5" loading="lazy" decoding="async"></div>
+                    <div class="image-wrapper"><img src="thumbs/gallery6.jpg" data-full="gallery6.jpg" alt="Gallery Image 6" loading="lazy" decoding="async"></div>
+                    <div class="image-wrapper"><img src="thumbs/gallery7.jpg" data-full="gallery7.jpg" alt="Gallery Image 7" loading="lazy" decoding="async"></div>
+                    <div class="image-wrapper"><img src="thumbs/gallery8.jpg" data-full="gallery8.jpg" alt="Gallery Image 8" loading="lazy" decoding="async"></div>
                 </div>
             </div>
         </section>
@@ -626,7 +627,7 @@
         let currentImageIndex = 0;
 
         function openLightbox(image, index) {
-            lightboxImg.src = image.src;
+            lightboxImg.src = image.dataset.full || image.src;
             lightboxImg.alt = image.alt;
             currentImageIndex = index;
             lightbox.classList.add('active');
@@ -640,13 +641,13 @@
 
         function showNextImage() {
             currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-            lightboxImg.src = galleryImages[currentImageIndex].src;
+            lightboxImg.src = galleryImages[currentImageIndex].dataset.full || galleryImages[currentImageIndex].src;
             lightboxImg.alt = galleryImages[currentImageIndex].alt;
         }
 
         function showPrevImage() {
             currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-            lightboxImg.src = galleryImages[currentImageIndex].src;
+            lightboxImg.src = galleryImages[currentImageIndex].dataset.full || galleryImages[currentImageIndex].src;
             lightboxImg.alt = galleryImages[currentImageIndex].alt;
         }
 

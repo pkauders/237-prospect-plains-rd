@@ -196,7 +196,7 @@ def parse_rosters(paths, centroids):
                     "city": vals[COL_CITY].strip(),
                     "state": vals[COL_STATE].strip(),
                     "zip": zip5,
-                    "county": vals[COL_COUNTY].strip(),
+                    "county": vals[COL_COUNTY].strip().title(),
                     "phone": fmt_phone(phone),
                     "email": vals[COL_EMAIL].strip().lower(),
                     "license": licno,

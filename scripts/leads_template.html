@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Campaign Lead List | 237 Prospect Plains Rd</title>
+<style>
+:root { --dark:#1a1a1a; --light:#f8f8f8; --gold:#c9a96e; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; background:var(--light); color:var(--dark); line-height:1.6; }
+h1,h2 { font-family:Georgia,serif; font-weight:normal; }
+.gate { max-width:420px; margin:18vh auto 0; padding:40px; background:#fff; border-top:3px solid var(--gold); box-shadow:0 2px 20px rgba(0,0,0,.08); text-align:center; }
+.gate h1 { font-size:1.6rem; margin:0 0 8px; }
+.gate p { color:#777; font-size:.95rem; margin:0 0 24px; }
+.gate input { width:100%; padding:12px 14px; font-size:1rem; border:1px solid #ccc; margin-bottom:14px; }
+button { padding:12px 28px; background:var(--gold); color:#fff; border:none; font-size:.95rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; }
+button:hover { background:#b8975d; }
+#err { color:#b00020; font-size:.9rem; min-height:1.3em; margin-top:10px; }
+#app { display:none; max-width:1280px; margin:0 auto; padding:30px 20px 60px; }
+.head { display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; border-bottom:2px solid var(--gold); padding-bottom:14px; margin-bottom:18px; }
+.head h1 { font-size:1.8rem; margin:0; }
+.head .meta { color:#777; font-size:.85rem; }
+.controls { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; align-items:center; }
+.controls input, .controls select { padding:9px 12px; font-size:.95rem; border:1px solid #ccc; }
+.controls input { flex:1; min-width:220px; }
+#count { color:#777; font-size:.9rem; margin-left:auto; }
+.twrap { overflow-x:auto; background:#fff; box-shadow:0 1px 8px rgba(0,0,0,.06); }
+table { border-collapse:collapse; width:100%; font-size:.85rem; }
+th { background:var(--dark); color:#fff; text-align:left; padding:9px 10px; position:sticky; top:0; white-space:nowrap; cursor:pointer; }
+td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+tr:hover td { background:#faf6ee; }
+td.num { text-align:right; white-space:nowrap; }
+a { color:#8a6d3b; }
+.note { color:#999; font-size:.8rem; margin-top:14px; }
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <h1>Campaign Lead List</h1>
+  <p>This page is encrypted. Enter the password to unlock.</p>
+  <form id="pwform">
+    <input type="password" id="pw" placeholder="Password" autofocus autocomplete="current-password">
+    <button type="submit">Unlock</button>
+    <div id="err"></div>
+  </form>
+</div>
+
+<div id="app">
+  <div class="head">
+    <h1>Contractor Campaign Leads</h1>
+    <span class="meta" id="subtitle"></span>
+  </div>
+  <div class="controls">
+    <input id="q" type="search" placeholder="Search business, owner, city, email&hellip;">
+    <select id="trade"><option value="">All trades</option></select>
+    <select id="county"><option value="">All counties</option></select>
+    <button id="dl" type="button">Download CSV</button>
+    <span id="count"></span>
+  </div>
+  <div class="twrap">
+    <table>
+      <thead><tr id="hdr"></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <p class="note">Source: NJ Division of Consumer Affairs public licensee rosters. Distances are approximate (zip-code centroid). Showing first 500 rows of the current filter &mdash; refine the search or download the CSV for the full set.</p>
+</div>
+
+<script>
+const SALT="__SALT__", NONCE="__NONCE__", CT="__CIPHERTEXT__", ITER=__ITERATIONS__;
+const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+const COLS=[["trade","Trade"],["business","Business"],["owner","Owner"],["address","Address"],["city","City"],["state","St"],["zip","Zip"],["county","County"],["phone","Phone"],["email","Email"],["license","License #"],["expires","Expires"],["miles","Miles"]];
+let DATA=null, view=[], sortKey="miles", sortAsc=true;
+
+async function unlock(pw){
+  const keyMat = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+  const key = await crypto.subtle.deriveKey({name:"PBKDF2", salt:b64(SALT), iterations:ITER, hash:"SHA-256"}, keyMat, {name:"AES-GCM", length:256}, false, ["decrypt"]);
+  const plain = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(NONCE)}, key, b64(CT));
+  const ds = new DecompressionStream("gzip");
+  const json = await new Response(new Blob([plain]).stream().pipeThrough(ds)).text();
+  return JSON.parse(json);
+}
+
+document.getElementById("pwform").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = document.getElementById("err");
+  err.textContent = "Decrypting…";
+  try {
+    DATA = await unlock(document.getElementById("pw").value);
+    err.textContent = "";
+    boot();
+  } catch (ex) {
+    err.textContent = ex.name === "OperationError" ? "Wrong password." : "Error: " + ex.message;
+  }
+});
+
+function boot(){
+  document.getElementById("gate").style.display = "none";
+  document.getElementById("app").style.display = "block";
+  document.getElementById("subtitle").textContent =
+    DATA.rows.length.toLocaleString() + " active licensees within " + DATA.radius_miles +
+    " miles of " + DATA.center + " · data as of " + DATA.generated;
+  const hdr = document.getElementById("hdr");
+  for (const [k, label] of COLS) {
+    const th = document.createElement("th");
+    th.textContent = label;
+    th.onclick = () => { sortAsc = sortKey === k ? !sortAsc : true; sortKey = k; render(); };
+    hdr.appendChild(th);
+  }
+  const fill = (id, key) => {
+    const sel = document.getElementById(id);
+    [...new Set(DATA.rows.map(r => r[key]).filter(Boolean))].sort().forEach(v => {
+      const o = document.createElement("option"); o.value = o.textContent = v; sel.appendChild(o);
+    });
+    sel.onchange = render;
+  };
+  fill("trade", "trade"); fill("county", "county");
+  document.getElementById("q").addEventListener("input", render);
+  document.getElementById("dl").onclick = downloadCsv;
+  render();
+}
+
+function render(){
+  const q = document.getElementById("q").value.toLowerCase();
+  const t = document.getElementById("trade").value;
+  const c = document.getElementById("county").value;
+  view = DATA.rows.filter(r =>
+    (!t || r.trade === t) && (!c || r.county === c) &&
+    (!q || COLS.some(([k]) => String(r[k]).toLowerCase().includes(q))));
+  view.sort((a, b) => {
+    const x = a[sortKey], y = b[sortKey];
+    const d = typeof x === "number" ? x - y : String(x).localeCompare(String(y));
+    return sortAsc ? d : -d;
+  });
+  document.getElementById("count").textContent = view.length.toLocaleString() + " leads";
+  const tb = document.getElementById("tbody");
+  tb.textContent = "";
+  for (const r of view.slice(0, 500)) {
+    const tr = document.createElement("tr");
+    for (const [k] of COLS) {
+      const td = document.createElement("td");
+      if (k === "email" && r.email) { const a = document.createElement("a"); a.href = "mailto:" + r.email; a.textContent = r.email; td.appendChild(a); }
+      else if (k === "phone" && r.phone) { const a = document.createElement("a"); a.href = "tel:" + r.phone.replace(/\D/g, ""); a.textContent = r.phone; td.appendChild(a); }
+      else td.textContent = r[k];
+      if (k === "miles") td.className = "num";
+      tr.appendChild(td);
+    }
+    tb.appendChild(tr);
+  }
+}
+
+function downloadCsv(){
+  const esc = v => { v = String(v ?? ""); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+  const lines = [COLS.map(c => c[1]).join(",")];
+  for (const r of view) lines.push(COLS.map(([k]) => esc(r[k])).join(","));
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([lines.join("\n")], {type: "text/csv"}));
+  a.download = "contractor-leads.csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
